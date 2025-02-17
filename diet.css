@@ -1,0 +1,172 @@
+/* Base Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f119;
+    color: #333;
+    background-image: url('background.jpg');
+    height: 100%;
+}
+
+/* Main container */
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h2, h3 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+/* Form elements */
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Results and calculations */
+#result p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+/* Meal plan sections */
+.meal-plan, .meal-section, .total-calories, .water-tracker {
+    margin-top: 20px;
+}
+
+.meal-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+select {
+    font-size: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.total-calories {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.total-calories h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #d9534f;
+}
+
+/* Water tracker section */
+.water-tracker {
+    background-color: #e9f7fd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.water-tracker p {
+    font-size: 1.1rem;
+}
+
+.water-tracker button {
+    width: 50%;
+    margin: 15px auto;
+    background-color: #28a745;
+}
+
+.water-tracker button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

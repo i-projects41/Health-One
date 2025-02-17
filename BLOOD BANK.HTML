@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Finder</title>
+    <link rel="stylesheet" href="BB.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-heartbeat"></i> Blood Bank Finder</h1>
+        <p class="subtitle">Finding hope, saving lives - Your trusted blood bank locator</p>
+    </div>
+
+    <div class="container">
+        <div class="notice">
+            <i class="fas fa-info-circle"></i>
+            Currently available in Kolkata and surrounding areas
+        </div>
+
+        <div class="search-section">
+            <div class="search-box">
+                <div class="input-group">
+                    <label for="location-select">
+                        <i class="fas fa-map-marker-alt"></i> Your Location
+                    </label>
+                    <select id="location-select">
+                        <option value="">Select Location</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Salt Lake">Salt Lake</option>
+                        <option value="Howrah">Howrah</option>
+                        <option value="New Town">New Town</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="bloodgroup-select">
+                        <i class="fas fa-tint"></i> Blood Group Required
+                    </label>
+                    <select id="bloodgroup-select">
+                        <option value="">Select Blood Group</option>
+                        <option value="A+">A Positive (A+)</option>
+                        <option value="A-">A Negative (A-)</option>
+                        <option value="B+">B Positive (B+)</option>
+                        <option value="B-">B Negative (B-)</option>
+                        <option value="AB+">AB Positive (AB+)</option>
+                        <option value="AB-">AB Negative (AB-)</option>
+                        <option value="O+">O Positive (O+)</option>
+                        <option value="O-">O Negative (O-)</option>
+                    </select>
+                </div>
+
+                <button id="search-btn" class="search-button">
+                    <i class="fas fa-search"></i> Find Blood Banks
+                </button>
+            </div>
+        </div>
+
+        <div class="results-section" id="results-section">
+            <h2><i class="fas fa-hospital"></i> Available Blood Banks</h2>
+            <div class="results-container">
+                <div id="blood-banks-list" class="blood-banks-list">
+                    <!-- Blood banks will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="emergency-section">
+            <h3><i class="fas fa-ambulance"></i> Emergency Contacts</h3>
+            <div class="emergency-contacts">
+                <div class="emergency-contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Ambulance: 102</span>
+                </div>
+                <div class="emergency-contact">
+                    <i class="fas fa-phone"></i>
+                    <span>Blood Bank Helpline: 1800-XXX-XXXX</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>
+            <i class="fas fa-heart"></i> Donate Blood, Save Lives 
+            <i class="fas fa-heart"></i>
+        </p>
+        <p class="disclaimer">
+            For medical emergencies, please call emergency services immediately.
+        </p>
+    </div>
+
+    <script src="BB.js"></script>
+</body>
+</html>

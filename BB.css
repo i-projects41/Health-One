@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.tablinks {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tablinks:hover {
+    background-color: #0056b3;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.tabcontent h2 {
+    margin-top: 0;
+}
+
+#location-select, #bloodgroup-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#blood-banks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#blood-banks-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#blood-banks-list li:last-child {
+    border-bottom: none;
+}
+
+#blood-banks-list li:hover {
+    background-color: #f0f0f0;
+}

@@ -1,0 +1,155 @@
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --container-bg-color: white;
+    --button-bg-color: #007BFF;
+    --button-text-color: white;
+    --button-hover-color: #0056b3;
+    --background-image: url('corplight.jpg'); /* Light mode background image */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    background-color: var(--container-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .issue-btn, .back-btn {
+    display: inline-block;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .issue-btn:hover, .back-btn:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  /* Dark mode specific styles */
+  body.dark-mode {
+    --background-color: #1a1a2e;
+    --text-color: #f0f0f0;
+    --container-bg-color: #16213e;
+    --button-bg-color: #0f3460;
+    --button-text-color: #f0f0f0;
+    --button-hover-color: #1f4068;
+    --background-image: url('corpdark.webp'); /* Dark mode background image */
+    
+  }
+  
+  
+  .mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mode-toggle:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    body {
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 20px;
+    }
+  
+    .container {
+      width: 95%;
+      max-width: none;
+    }
+  
+    .button-container {
+      flex-direction: column;
+    }
+  
+    .issue-btn, .back-btn {
+      width: 100%;
+      margin: 10px 0;
+      padding: 15px;
+      font-size: 16px;
+    }
+  
+    .mode-toggle {
+      top: 15px;
+      right: 15px;
+      padding: 12px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    .issue-btn, .back-btn {
+      font-size: 14px;
+      padding: 12px;
+    }
+  
+    .mode-toggle {
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      font-size: 12px;
+    }
+  }
+  

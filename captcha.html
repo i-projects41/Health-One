@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Example</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Captcha container styles */
+.captcha-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Captcha box styles */
+.captcha-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #ddd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+#captcha {
+    letter-spacing: 5px;
+}
+
+#refresh {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+#refresh:hover {
+    color: #000;
+}
+
+/* Input box */
+#captcha-input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Submit button */
+#submit {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #218838;
+}
+
+    </style>
+</head>
+<body>
+    <div class="captcha-container">
+        <div class="captcha-box">
+            <span id="captcha"></span>
+            <button id="refresh" title="Refresh Captcha">&#x21bb;</button>
+        </div>
+        <input type="text" id="captcha-input" placeholder="Enter the captcha">
+        <button id="submit">Submit</button>
+    </div>
+
+    <script>
+    // Global variable to store the generated CAPTCHA
+let generatedCaptcha = '';
+
+// Function to generate a random CAPTCHA
+function generateCaptcha() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let captcha = '';
+    for (let i = 0; i < 6; i++) {
+        captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    generatedCaptcha = captcha; // Store the generated CAPTCHA for later validation
+    document.getElementById('captcha').textContent = captcha;
+}
+
+// Function to refresh the CAPTCHA
+document.getElementById('refresh').addEventListener('click', function() {
+    generateCaptcha();
+});
+
+// Generate initial CAPTCHA on page load
+window.onload = function() {
+    generateCaptcha();
+}
+
+// Function to validate the CAPTCHA input
+document.getElementById('submit').addEventListener('click', function() {
+    const userInput = document.getElementById('captcha-input').value;
+    
+    // Check if the user's input matches the generated CAPTCHA
+    if (userInput === generatedCaptcha) {
+        alert('Captcha is correct!');
+    } else {
+        alert('Captcha is incorrect. Please try again.');
+    }
+});
+
+
+    </script>
+</body>
+</html>

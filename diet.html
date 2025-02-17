@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI, Calorie & Water Tracker</title>
+    <link rel="stylesheet" href="diet.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fbff1b;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: hsl(55, 94%, 72%);
+
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .bmi-calculator, .meal-plan, .water-tracker {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .bmi-calculator, .meal-section, .water-tracker {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .meal-image {
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            border-radius: 5px;
+        }
+
+        .total-calories h3 {
+            font-size: 1.2em;
+            color: #d9534f;
+        }
+
+        .water-tracker button {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comprehensive Health Tracker</h1>
+
+        <!-- BMI & Calorie Goal Section -->
+        <div class="bmi-calculator visible">
+            <h2>Calculate Your BMI & Set Calorie Goals</h2>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter your weight" required>
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Enter your height" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age" required>
+            <button onclick="calculateBMI()">Calculate BMI</button>
+            <p>Your BMI is: <span id="bmi-value">0</span></p>
+            <p>Recommended Daily Calorie Goal: <span id="calorie-goal">0</span> kcal</p>
+        </div>
+
+        <!-- Meal Plan Section (Initially hidden) -->
+        <div class="meal-plan">
+            <h2>Meal Plan</h2>
+
+            <!-- Breakfast Section -->
+            <div class="meal-section">
+                <h3>Breakfast</h3>
+                <img src="breakfast.webp" alt="Breakfast" class="meal-image">
+                <select id="breakfast" onchange="updateMealCalories('breakfast')">
+                    <option value="0">-- Select Breakfast --</option>
+                    <option value="150">Idli - 150 kcal</option>
+                    <option value="200">Poha - 200 kcal</option>
+                    <option value="250">Aloo Paratha - 250 kcal</option>
+                    <option value="180">Upma - 180 kcal</option>
+                    <option value="200">Dosa - 200 kcal</option>
+                    <option value="300">Oatmeal - 300 kcal</option>
+                    <option value="350">Pancakes - 350 kcal</option>
+                    <option value="200">Omelette - 200 kcal</option>
+                    <option value="300">Avocado Toast - 300 kcal</option>
+                    <option value="250">Smoothie Bowl - 250 kcal</option>
+                </select>
+                <p>Calories: <span id="breakfast-calories">0</span> kcal</p>
+            </div>
+
+            <!-- Lunch Section -->
+            <div class="meal-section">
+                <h3>Lunch</h3>
+                <img src="lunch.jpg" alt="Lunch" class="meal-image">
+                <select id="lunch" onchange="updateMealCalories('lunch')">
+                    <option value="0">-- Select Lunch --</option>
+                    <option value="350">Paneer Butter Masala - 350 kcal</option>
+                    <option value="400">Chicken Curry - 400 kcal</option>
+                    <option value="350">Dal Fry with Rice - 350 kcal</option>
+                    <option value="250">Chapati with Vegetables - 250 kcal</option>
+                    <option value="500">Grilled Chicken Salad - 500 kcal</option>
+                    <option value="450">Pasta with Sauce - 450 kcal</option>
+                    <option value="400">Grilled Fish with Veggies - 400 kcal</option>
+                    <option value="300">Veggie Wrap - 300 kcal</option>
+                </select>
+                <p>Calories: <span id="lunch-calories">0</span> kcal</p>
+            </div>
+
+            <!-- Tiffin Section -->
+            <div class="meal-section">
+                <h3>Tiffin</h3>
+                <img src="tiffin.jpg" alt="Tiffin" class="meal-image">
+                <select id="tiffin" onchange="updateMealCalories('tiffin')">
+                    <option value="0">-- Select Tiffin --</option>
+                    <option value="150">Fruit Salad - 150 kcal</option>
+                    <option value="200">Veggie Sandwich - 200 kcal</option>
+                    <option value="250">Protein Shake - 250 kcal</option>
+                    <option value="180">Nuts Mix - 180 kcal</option>
+                </select>
+                <p>Calories: <span id="tiffin-calories">0</span> kcal</p>
+            </div>
+
+            <!-- Dinner Section -->
+            <div class="meal-section">
+                <h3>Dinner</h3>
+                <img src="dinner.jpg" alt="Dinner" class="meal-image">
+                <select id="dinner" onchange="updateMealCalories('dinner')">
+                    <option value="0">-- Select Dinner --</option>
+                    <option value="350">Dal Tadka with Roti - 350 kcal</option>
+                    <option value="300">Vegetable Khichdi - 300 kcal</option>
+                    <option value="400">Paneer Curry with Rice - 400 kcal</option>
+                    <option value="450">Grilled Salmon - 450 kcal</option>
+                    <option value="300">Soup with Bread - 300 kcal</option>
+                    <option value="350">Quinoa Salad - 350 kcal</option>
+                    <option value="250">Stir-Fry Veggies - 250 kcal</option>
+                </select>
+                <p>Calories: <span id="dinner-calories">0</span> kcal</p>
+            </div>
+
+            <!-- Total Calories -->
+            <div class="total-calories">
+                <h3>Total Calories for the Day: <span id="total-calories">0</span> kcal</h3>
+            </div>
+        </div>
+
+        <!-- Water Tracker Section (Initially hidden) -->
+        <div class="water-tracker">
+            <h2>Water Tracker</h2>
+            <p>Recommended Water Intake: <span id="water-recommendation">0</span> ml</p>
+            <button onclick="addWater()">Add 250 ml</button>
+            <p>Current Water Intake: <span id="water-intake">0</span> ml</p>
+        </div>
+    </div>
+
+    <script src="diet.js"></script>
+</body>
+</html>

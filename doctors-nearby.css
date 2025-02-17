@@ -1,0 +1,71 @@
+/* General body styles */
+body {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('doctNear.jpg'); /* Background image for the page */
+    background-size: cover; /* Ensure the image covers the whole page */
+    background-position: center; /* Center the background image */
+    color: #ffffff;
+}
+
+/* Header styling */
+header {
+    background-color: rgba(0, 77, 64, 0.8); /* Semi-transparent dark background */
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-content h1 {
+    margin: 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styling */
+main {
+    padding: 4rem 2rem 2rem; /* Adjust padding for main content */
+    text-align: center;
+    margin-top: 70px; /* Adjust for fixed header height */
+}
+
+.doctors-nearby-container {
+    margin-top: 2rem;
+}
+
+.coming-soon {
+    font-size: 3rem;
+    font-style: italic;
+    color: #ffffff;
+    background-color: rgba(255, 87, 34, 0.8); /* Semi-transparent background color */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+
+/* Footer styling */
+.footer {
+    background-color: rgba(0, 77, 64, 0.8); /* Semi-transparent dark background */
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

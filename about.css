@@ -1,0 +1,158 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4CAF50;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo h1 {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 16px;
+   
+}
+.navbar h1 a{
+    text-decoration: none;
+}
+
+.navbar nav a:hover {
+    color: #ffdd57;
+}
+
+.about-section {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    margin: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-section p {
+    font-size: 18px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    color: #555;
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #777;
+}
+
+.social-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    margin: 50px auto;
+    border-radius: 12px;
+    max-width: 900px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-links a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffdd57;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+section{
+    background-image: url("bg3.jpg");
+    opacity: 0.9;
+    background-size: cover;
+}
