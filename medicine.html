@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthOne - Medicine Recommendations</title>
+    <link rel="stylesheet" href="medicine.css">
+</head>
+<body>
+    <header>
+        <h1>HealthOne</h1>
+        <p>Your trusted guide for medicine recommendations</p>
+    </header>
+    <main>
+        <section class="recommendation-form">
+            <h2>Get Your Medicine Recommendation</h2>
+            <label for="symptoms">Enter your symptoms (comma separated):</label>
+            <input type="text" id="symptoms" placeholder="e.g., headache, fever">
+            <button onclick="getRecommendations()">Get Recommendations</button>
+        </section>
+        <section class="recommendations" id="recommendations">
+            <!-- Recommendations will be displayed here -->
+        </section>
+    </main>
+    <script src="medicine.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+/* General Styling */
+body {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgba(0, 95, 115, 0.85); /* Slight transparency */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Search Bar */
+.search-bar {
+    margin: 30px auto;
+    position: relative;
+    width: 50%;
+    max-width: 600px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #005f73;
+    border-radius: 25px;
+    font-size: 18px;
+    outline: none;
+}
+
+#search-input:focus {
+    border-color: #0a9396;
+}
+
+.suggestions-list {
+    border: 2px solid #005f73;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+}
+
+.suggestion-item:hover {
+    background-color: #e0fbfc;
+}
+
+/* Search Results */
+.search-results-container {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-results-container h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #005f73;
+}
+
+.search-results-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Footer */
+footer.footer {
+    background-color: rgba(0, 95, 115, 0.85); /* Slight transparency */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}

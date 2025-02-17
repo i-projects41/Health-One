@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #FFDC7F;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #35424a;
+    padding: 10px 0;
+    width: 100%;
+    height: 70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 90%; /* Increasing the width */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    background-color: #1abc9c;
+    padding: 10px 20px;
+    transition: 0.3s ease;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+main h1 {
+    font-size: 30px;
+    color: #35424a;
+    margin-bottom: 15px;
+}
+
+main p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Sliding image container */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Text over images */
+.slider .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+/* Links in content section */
+.links {
+    margin-top: 20px;
+}
+
+.links .btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.links .btn:hover {
+    background-color: #16a085;
+}
+
+/* Footer styling */
+footer {
+    background-color: #227B94;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+footer ul li a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.contact p {
+    margin-bottom: 8px;
+}

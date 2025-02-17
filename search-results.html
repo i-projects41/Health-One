@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | Health One</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search-results.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Health One</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="about.html">About Us</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-results-container">
+            <h2>Search Results for: "<span id="search-query"></span>"</h2>
+            <p>Here are some remedies we found for you:</p>
+            
+            <div class="results">
+                <!-- Placeholder for results from Google -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        &copy; 2024 Health One. All rights reserved.
+    </footer>
+
+    <script>
+        // Get search query from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+        document.getElementById('search-query').innerText = query || "No query";
+
+        if (query) {
+            // Redirect to Google search results with the query
+            window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Health & Wellness</title>
+    <link rel="stylesheet" href="fitness.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="content">
+            <h1>The Importance of BMI & Diet for Health</h1>
+            <p>
+                Maintaining a healthy body weight and ensuring a balanced diet are key components of long-term health. 
+                Body Mass Index (BMI) is an essential metric that helps people understand if their weight is within a 
+                healthy range for their height. 
+            </p>
+            <p>
+                Whether you're looking to manage your weight or improve your general health, understanding your BMI 
+                and following a well-designed diet plan can make a significant difference.
+            </p>
+            
+            <!-- Sliding Images Section -->
+            <div class="slider">
+                <img src="i1.jpg" alt="Healthy diet" class="active">
+                <div class="caption">A balanced diet is essential for overall health.</div>
+                
+                <img src="i4.avif" alt="Exercise and BMI">
+                <div class="caption">Regular exercise helps in maintaining a healthy BMI.</div>
+                
+                <img src="i5.jpg" alt="Nutritional food">
+                <div class="caption">Nutritional foods are key to maintaining energy levels.</div>
+            </div>
+    
+            <div class="links">
+                <a href="diet.html" class="btn">Diet Plan</a>
+                <a href="basics.html" class="btn">BMI Calculator</a>
+                <a href="check.html" class="btn">cheat meals</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <h3>Contact Us</h3>
+            <p>Email: contact@healthwellness.com</p>
+            <p>Phone: +1 (234) 567-8901</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+const slides = document.querySelectorAll('.slider img');
+const totalSlides = slides.length;
+
+function showSlide(slideIndex) {
+    slides.forEach((slide, index) => {
+        if (index === slideIndex) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+}
+
+// Initial display
+showSlide(currentSlide);
+
+// Change slide every 3 seconds
+setInterval(nextSlide, 3000);
+
+    </script>
+</body>
+</html>

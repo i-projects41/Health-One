@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call with Doctor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #28a745;
+        }
+        .container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .doctor-selection {
+            margin-bottom: 20px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        #doctor-details {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .navigation {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .navigation a, .navigation button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Add style for the "JOIN NOW" button */
+        .join-now-btn {
+            background-color: #28a745;
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="notice">
+            <p>NOTICE: PLEASE install GOOGLE MEET for your one-to-one video call with your doctor.</p>
+        </div>
+
+        <div class="doctor-selection">
+            <h2>Select Doctor Category</h2>
+            <select id="doctor-category">
+                <option value="">Select Doctor Category</option>
+                <option value="primary">Primary Care Physicians</option>
+                <option value="specialty">Specialty Physicians</option>
+            </select>
+
+            <select id="doctor-list" style="display: none;">
+                <option value="">Select a Doctor</option>
+            </select>
+
+            <div id="doctor-details">
+                <h3 id="selected-doctor-name"></h3>
+                <p id="selected-doctor-description"></p>
+                <a href="https://meet.google.com/gbg-iyjz-jkq" target="_blank" id="join-call-btn" style="display: none;">
+                    Join Video Call
+                </a>
+                <!-- New JOIN NOW Button -->
+                <a href="https://meet.google.com/hci-ajdp-hgw" target="_blank" class="join-now-btn">
+                    JOIN NOW
+                </a>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="home.html">Home</a>
+            <button id="back-button">Back</button>
+        </div>
+    </div>
+
+    <script>
+        // Doctor data
+        const doctorCategories = {
+            primary: [
+                {
+                    name: "General Physician",
+                    description: "Provides comprehensive care for individuals of all ages, including diagnosis, treatment, and preventive care."
+                },
+                {
+                    name: "Internal Medicine Physician",
+                    description: "Specializes in the diagnosis and treatment of adult diseases."
+                },
+                {
+                    name: "Pediatrician",
+                    description: "Specializes in the care of infants, children, and adolescents."
+                },
+                {
+                    name: "Geriatrician",
+                    description: "Specializes in the care of older adults."
+                }
+            ],
+            specialty: [
+                {
+                    name: "Cardiologist",
+                    description: "Diagnoses and treats heart conditions."
+                },
+                {
+                    name: "Dermatologist",
+                    description: "Diagnoses and treats skin, hair, and nail conditions."
+                },
+                {
+                    name: "Neurologist",
+                    description: "Diagnoses and treats disorders of the nervous system."
+                },
+                {
+                    name: "Psychiatrist",
+                    description: "Diagnoses and treats mental, emotional, and behavioral disorders."
+                },
+                {
+                    name: "Orthopedist",
+                    description: "Diagnoses and treats musculoskeletal disorders."
+                }
+            ]
+        };
+
+        // DOM Elements
+        const doctorCategory = document.getElementById('doctor-category');
+        const doctorList = document.getElementById('doctor-list');
+        const doctorDetails = document.getElementById('doctor-details');
+        const selectedDoctorName = document.getElementById('selected-doctor-name');
+        const selectedDoctorDescription = document.getElementById('selected-doctor-description');
+        const joinCallBtn = document.getElementById('join-call-btn');
+        const backButton = document.getElementById('back-button');
+
+        // Event listener for doctor category selection
+        doctorCategory.addEventListener('change', function() {
+            const category = this.value;
+            doctorList.innerHTML = '<option value="">Select a Doctor</option>';
+            
+            if (category) {
+                doctorCategories[category].forEach(doctor => {
+                    const option = document.createElement('option');
+                    option.value = doctor.name;
+                    option.textContent = doctor.name;
+                    doctorList.appendChild(option);
+                });
+                
+                doctorList.style.display = 'block';
+                doctorDetails.style.display = 'none';
+            } else {
+                doctorList.style.display = 'none';
+                doctorDetails.style.display = 'none';
+            }
+        });
+
+        // Event listener for doctor selection
+        doctorList.addEventListener('change', function() {
+            const selectedDoctor = this.value;
+            const category = doctorCategory.value;
+
+            if (selectedDoctor) {
+                const doctor = doctorCategories[category].find(d => d.name === selectedDoctor);
+                
+                selectedDoctorName.textContent = doctor.name;
+                selectedDoctorDescription.textContent = doctor.description;
+                
+                doctorDetails.style.display = 'block';
+                joinCallBtn.style.display = 'block';
+            } else {
+                doctorDetails.style.display = 'none';
+            }
+        });
+
+        // Back button functionality
+        backButton.addEventListener('click', function() {
+            history.back();
+        });
+    </script>
+</body>
+</html>

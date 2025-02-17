@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    margin: 0;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #1a1c2c;
+    width: 250px;
+    padding-top: 20px;
+    color: white;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    color: #a5acc4;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #252942;
+    color: #fff;
+}
+
+.sidebar ul li a.active {
+    background-color: #252942;
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.header .user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.header .user-profile img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.header .user-profile .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Overview Section */
+.overview {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.overview .card {
+    background-color: #f9fbfd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 24%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.overview .card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.overview .card .value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+.overview .card .percentage {
+    font-size: 14px;
+    color: #95a5a6;
+}
+
+/* Analytics Section */
+.analytics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.analytics .chart {
+    background-color: #f9fbfd;
+    width: 70%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.analytics .chart img {
+    width: 100%;
+    height: auto;
+}
+
+.analytics .recent-activity {
+    width: 28%;
+    padding: 20px;
+    background-color: #f9fbfd;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.analytics .recent-activity h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.recent-activity ul {
+    list-style-type: none;
+}
+
+.recent-activity ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.recent-activity ul li .customer {
+    display: flex;
+    align-items: center;
+}
+
+.recent-activity ul li .customer img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.recent-activity ul li .customer .name {
+    font-size: 16px;
+    color: #333;
+}
+
+.recent-activity ul li .status {
+    color: #1abc9c;
+    font-size: 14px;
+}

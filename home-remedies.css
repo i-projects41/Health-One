@@ -1,0 +1,129 @@
+/* General body styles */
+body {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFBE6; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+/* Header styling */
+header {
+    background-color: #004d40;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-content h1 {
+    margin: 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content styling */
+main {
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.home-remedies-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.remedy-section {
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.remedy-section h3 {
+    color: #00796b;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.remedy-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.remedy-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.remedy-card h4 {
+    color: #00796b;
+    margin-bottom: 1rem;
+}
+
+.remedy-card p {
+    color: #555;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #004d40;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.search-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.search-container button {
+    padding: 0.5rem 1rem;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search-container button:hover {
+    background-color: #004d40;
+}

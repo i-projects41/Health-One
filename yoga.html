@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Positions</title>
+    <link rel="stylesheet" href="yoga.css">
+</head>
+<body>
+    <script async src="https://cse.google.com/cse.js?cx=YOUR_SEARCH_ENGINE_ID"></script>
+    <div class="gcse-search"></div>
+
+    <header>
+        <h1>Yoga Positions</h1>
+        <input type="text" id="search-bar" placeholder="Search for a yoga pose...">
+        <div id="category-filter">
+            <button onclick="filterByCategory('all')">All</button>
+            <button onclick="filterByCategory('beginner')">Beginner</button>
+            <button onclick="filterByCategory('intermediate')">Intermediate</button>
+            <button onclick="filterByCategory('advanced')">Advanced</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="pose-container">
+            <!-- Yoga poses will be dynamically inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 health One</p>
+    </footer>
+
+    <script src="yoga.js"></script>
+</body>
+</html>
